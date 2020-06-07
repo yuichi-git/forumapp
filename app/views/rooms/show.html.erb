@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if @error_message %>
+        <p class="error"><%= @error_message %></p>
+    <% end %>
+    <div class="container">
+        <div class="room-hdr">
+            <% if @current_user && @current_user.id == @room.user_id %>
+                <%= link_to("部屋を削除", "/rooms/#{@room.id}/destroy", {method: "post"}) %>
+            <% end %>
+            <h2><%= @room.title %></h2>
+        </div>
+        <% @room.posts.each do |post| %>
+            <div class="post-item">
+                <div class="user-name">
+                    <span class="gray">名前 </span><%= link_to(post.user.name, "/users/#{post.user_id}") %>
+                </div>
+                <p class="post-con">
+                    <%= post.content %>
+                </p>
+                <div class="post-right">
+                    <%= post.created_at.strftime('%Y年%m月%d日 %H時%M分%S秒') %>
+                    <% if @current_user && @current_user.id == post.user_id %>
+                            <%= link_to("削除", "/posts/#{post.id}/destroy", {method: "post"}) %>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+        <%= form_tag("/posts/#{@room.id}/create") do %>
+            <div class="new-post">
+                <% if @current_user %>
+                    <p class="new-post-user">
+                        ユーザー: <%= @current_user.name %>
+                    </p>
+                    <textarea placeholder="内容" name="content"></textarea>
+                    <input class="sub-btn" type="submit" value="投稿する">
+                <% else %>
+                    <p>ログインしてあなたも参加しよう！</p>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ForumApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+
+  <body>
+      <header>
+        <h1 class="title"><%= link_to("世界一平和な掲示板", "/") %></h1>
+        <div class="menu">
+          <ul>
+              <li class="d"><%= link_to("部屋を見る", "/rooms/index") %></li>
+            <% if @current_user %>
+              <li><%= link_to("部屋を作る", "/rooms/new") %></li>
+              <li><%= link_to("マイページ", "/users/#{@current_user.id}") %>
+              <li><%= link_to("ログアウト", "/logout", {method: "post"}) %></li>
+            <% else %>
+              <li><%= link_to("新規登録", "/signup") %></li>
+              <li><%= link_to("ログイン", "/login") %></li>
+            <% end %>
+          </ul>
+        </div>
+    </header>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <%= yield %>
+    <footer>
+    </footer>
+  </body>
+</html>

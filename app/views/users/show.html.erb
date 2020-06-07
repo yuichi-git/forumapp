@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mypage">
+            <%= @user.name %>
+            <% if @current_user.id == @user.id %>
+                <%= link_to("編集", "/users/#{@user.id}/edit") %>
+                <p class="delete-btn">
+                    <%= link_to("削除", "/users/#{@user.id}/destroy", {method: "post"}) %>
+                </p>
+            <% end %>
+        </div>
+    </div>
+</body>
+</html>

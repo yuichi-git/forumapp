@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if @error_message %>
+        <p class="error"><%= @error_message %></p>
+    <% end %>
+    <%= form_tag("/rooms/create") do %>
+        <div class="container">
+            <div class="new-post">
+                <p class="new-post-user">
+                    ユーザー: <%= @current_user.name %>
+                </p>
+                <input placeholder="タイトル(100字以内)" name="room_title">
+                <textarea placeholder="ひとこと目" name="content"></textarea>
+                <input class="sub-btn" type="submit" value="部屋を作る">
+            </div>
+        </div>
+    <% end %>
+</body>
+</html>

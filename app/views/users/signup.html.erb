@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if @error_message %>
+        <p class="error"><%= @error_message %></p>
+    <% end %>
+    <div class="container">
+        <div class="new-post">
+            <%= form_tag("/users/create") do %>
+                <div>
+                    <p><input placeholder="名前" name="name" value="<%= @user.name %>"></p>
+                    <p><input placeholder="パスワード" name="password" type="password" value="<%= @user.password %>"></p>
+                    <input class="sub-btn" type="submit" value="ユーザー登録する">
+                </div>
+            <% end %>
+        </div>
+    </div>
+</body>
+</html>

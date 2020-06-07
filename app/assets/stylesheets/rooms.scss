@@ -1,0 +1,150 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.room-index-hdr {
+    font-size: 40px;
+    border-bottom: solid 2px rgb(126, 126, 126);
+    border-radius: 5px;
+    color: #383838;
+    background-color: #fff;
+    margin: 0px 0 30px 0;
+    padding: 10px 0;
+}
+
+.rooms {
+    margin: 20px;
+    padding: 20px;
+}
+
+.room {
+    position: relative;
+}
+
+.room a {
+}
+
+.room-title a {
+    height: 90px;
+    border-bottom: solid 1px rgb(126, 126, 126);
+    background-color: #fff;
+    width: 80%;
+    margin: 0px auto;
+    font-size: 16px;
+    text-align: left;
+    padding: 20px;
+}
+
+.room-info a {
+    display: inline;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.room a:hover {
+    background-color: rgb(192, 192, 192);
+    color: #000;
+}
+
+.room-info {
+    position: absolute;
+    top: 64%;
+    left: 61%;
+    vertical-align: middle;
+    color: rgb(126, 126, 126);
+    font-size: 14px;
+    text-align: right;
+}
+
+.post-item {
+    width: 80%;
+    background-color: #fff;
+    padding: 10px 10px 10px 30px;
+    margin: 20px auto;
+    box-shadow: 5px 5px rgb(126, 126, 126);
+    border-radius: 10px;
+    text-align: left;
+}
+
+.post-con {
+    margin-right: 20px;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.user-name {
+    margin-top: 10px;
+}
+
+.post-right {
+    color: rgb(126, 126, 126);
+    text-align: right;
+    margin: 10px;
+}
+
+.user-name a, .post-right a {
+    display: inline;
+}
+
+.user-name a:visited {
+    color: rgb(126, 126, 126);
+}
+
+.user-name a {
+    color: rgb(126, 126, 126);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.user-name a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+.gray {
+    color: rgb(126, 126, 126);
+}
+
+.new-room {
+    padding: 30px;
+}
+
+.room-hdr {
+    background-color: #919191e1;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.room-hdr a {
+    float: right;
+}
+
+.room-hdr h2 {
+    color: #fff;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.post-right a, .room-hdr a, .delete-btn a {
+    padding: 10px 20px;
+    background-color: #ff4141;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.post-right a:hover, .room-hdr a:hover, .delete-btn a:hover {
+    background-color: #000;
+    color: #ff4141;
+}
+
+.new-post {
+    background-color: #fff;
+    border: solid 1px rgb(126, 126, 126);
+    text-align: center;
+    margin: 40px 200px 30px 200px;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}

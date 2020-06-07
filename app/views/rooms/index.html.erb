@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="rooms">
+            <h2 class="room-index-hdr">部屋一覧</h2>
+            <% @rooms.each do |room| %>
+                <div class="room">
+                    <p class="room-title">
+                        <%= link_to(room.title, "/rooms/#{room.id}") %>
+                    </p>
+                    <div class="room-info">
+                        <%= link_to("作成者: #{room.user.name}", "/users/#{room.user_id}") %>
+                        <%= room.created_at.strftime('作成日: %Y年%m月%d日') %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</body>
+</html>
